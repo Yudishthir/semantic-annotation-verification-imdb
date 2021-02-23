@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#url_input {
+	max-width: 800px;
+	width: 100%;
+	margin: auto;
+	margin-top: 1rem;
+}
+
+#url {
+	width: 100%;
+	padding: 0.5rem 1rem 0.5rem 2.5rem;
+	font-family: "Fira Sans", sans-serif;
+	font-size: 18px;
+	border: 1px solid grey;
+}
+
+#url:focus {
+	outline: none;
+	border: 1px solid grey;
+}
+
+i {
+	position: relative;
+	left: 13px;
+	top: 31px;
+	color: grey;
+}
+
+label {
+	display: block;
+	text-align: center;
+	font-size: 24px;
+	font-family: "Fira Sans", sans-serif;
+	font-weight: bold;
+	margin-top: 8.5%;
+}
+
+#search,
+#copy,
+#validate {
+	display: block;
+	margin: auto;
+	padding: 0.5rem 1.2rem;
+	margin-top: 1rem;
+	font-family: "Fira Sans", sans-serif;
+	font-weight: bold;
+	background-color: #007bff;
+	color: #ffffff;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.1rem;
+}
+
+#search:focus,
+#copy:focus,
+#validate:focus {
+	outline: none;
+}
+
+#buttons {
+	display: flex;
+	max-width: 500px;
+	margin: auto;
+	width: 100%;
+}
+
+#copy,
+#validate {
+	margin: 0.5rem auto 3rem auto;
+	display: none;
+}
+
+#result {
+	max-width: 1000px;
+	width: 100%;
+	font-family: consolas;
+	margin: 3rem auto;
+	display: none;
+	padding: 2rem;
+	border: 1px solid #000000;
+	word-wrap: break-word;
+}
+
+#output {
+	max-width: 100%;
+	word-wrap: break-word;
+	/* overflow-x: scroll; */
+	white-space: pre-wrap;
+}
+
+#output span {
+	max-width: 100%;
+	word-wrap: break-word;
+}
+
+main {
+	padding: 0 1rem;
+}
+
+header {
+	max-width: 800px;
+	width: 100%;
+	font-family: "Fira Sans", sans-serif;
+	text-align: center;
+	margin: auto;
+}
+
+h1 {
+	margin-top: 3rem;
+	font-size: 48px;
+}
+
+header p {
+	margin-top: 0.8rem;
+}
+
+.string {
+	color: green;
+}
+.number {
+	color: darkorange;
+}
+.boolean {
+	color: blue;
+}
+.null {
+	color: magenta;
+}
+.key {
+	color: red;
+}
+
+#loader {
+	display: block;
+	height: 30px;
+	width: 30px;
+	margin: 5rem auto;
+	border: 2px solid #000000;
+	background-color: #000000;
+	z-index: 10;
+	display: none;
+	animation: loader 2s infinite ease-in;
+}
+
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(180deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	75% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: #ffffff;
+	font-family: "Fira Sans", sans-serif;
+	background-color: #007bff;
+}
+
+footer p {
+	padding: 1rem 0;
+	text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+	#buttons {
+		flex-direction: column;
+	}
+	#copy {
+		margin-bottom: 0;
+	}
+}
+
+#snackbar {
+	font-family: "Fira Sans", sans-serif;
+	visibility: hidden; /* Hidden by default. Visible on click */
+	min-width: 250px; /* Set a default minimum width */
+	margin-left: -125px; /* Divide value of min-width by 2 */
+	background-color: red; /* Black background color */
+	color: #fff; /* White text color */
+	text-align: center; /* Centered text */
+	border-radius: 2px; /* Rounded borders */
+	padding: 16px; /* Padding */
+	position: fixed; /* Sit on top of the screen */
+	z-index: 1; /* Add a z-index if needed */
+	left: 50%; /* Center the snackbar */
+	bottom: 30px; /* 30px from the bottom */
+	border: none;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+	visibility: visible; /* Show the snackbar */
+	/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+	However, delay the fade out process for 2.5 seconds */
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+	from {
+		bottom: 0;
+		opacity: 0;
+	}
+	to {
+		bottom: 30px;
+		opacity: 1;
+	}
+}
+
+@keyframes fadein {
+	from {
+		bottom: 0;
+		opacity: 0;
+	}
+	to {
+		bottom: 30px;
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeout {
+	from {
+		bottom: 30px;
+		opacity: 1;
+	}
+	to {
+		bottom: 0;
+		opacity: 0;
+	}
+}
+
+@keyframes fadeout {
+	from {
+		bottom: 30px;
+		opacity: 1;
+	}
+	to {
+		bottom: 0;
+		opacity: 0;
+	}
+}

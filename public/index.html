@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraper</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script src="./request.js">
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Metadata Scraper for IMDB</h1>
+        <p>Scrape metadata from websites available in microdata and ld/json format. Output is an object and the key content holds the metadata in the form of an array. The first element of the array is the metadata in ld/json format, second the microdata format.</p>
+    </header>
+    <main>
+        <form id="url_search">
+            <label for="url">Enter URL:</label>
+            <div id="url_input">
+                <i class="fas fa-search"></i>
+                <input type="url" name="url" id="url" required autocomplete="off">
+                
+            </div>
+            <button type="submit" id="search">Search</button>
+        </form>
+        <span id="loader"></span>
+        <div id="result">
+            <pre id="output">
+
+            </pre>
+        </div>
+        <div id="buttons">
+            <button id="copy">Copy JSON to clipboard</button>
+            <button id="validate">Validate against schema</button>
+        </div>
+    </main>
+    <footer id="footer">
+        <p>Made by Yudishthir Lokhande; Copyright 2020</p>
+    </footer>
+    <div id="snackbar">Some text some message..</div>
+</body>
+</html>

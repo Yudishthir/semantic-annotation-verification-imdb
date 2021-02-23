@@ -1,0 +1,33 @@
+{
+  "name": "semantic-annotation-verification",
+  "version": "1.0.0",
+  "description": "Scraper app to extract the details from a page that may use schema.org and validate them against the schema",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "scrape": "node scripts/scraper.js",
+    "generate": "node scripts/schema.js",
+    "start": "node server.js",
+    "validate": "node scripts/verification.js"
+  },
+  "keywords": [
+    "schema.org",
+    "semantic",
+    "web",
+    "semantic web",
+    "web scraping",
+    "cheerio",
+    "schema.org",
+    "ld/json",
+    "microdata",
+    "scraping"
+  ],
+  "author": "Yudishthir Lokhande",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "request": "^2.88.2"
+  }
+}
